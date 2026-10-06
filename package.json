@@ -1,0 +1,63 @@
+{
+  "name": "mimo-first-bridge",
+  "version": "1.2.9",
+  "description": "Xiaomi MiMo bridge for DeepSeek Harness (DSH): dispatch to MiMoCode (`mimo` CLI) or the Xiaomi MiMo Desktop client, preselected in settings (backend = mimocode | mimo-desktop). Full DSH control on the CLI path (--dangerously-skip-permissions), Desktop local API on the desktop path, rate-limit/network fallback dialog, live status light, and a zero-dependency MCP server (mimo_run / mimo_continue / mimo_status / mimo_settings).",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "verify": "node scripts/verify.mjs",
+    "check": "node scripts/build.mjs --check && node scripts/verify.mjs && node mcp/mimo-mcp-server.mjs --check",
+    "test": "node scripts/build.mjs --check && node tests/core.test.mjs && node tests/desktop-delivery.test.mjs && node tests/indicator-stale.test.mjs && node tests/contracts.test.mjs && node tests/mcp-smoke.test.mjs",
+    "prepack": "node scripts/verify.mjs"
+  },
+  "main": "./home-plugin/mimo-indicator/lib/index.mjs",
+  "exports": {
+    ".": "./home-plugin/mimo-indicator/lib/index.mjs",
+    "./client": "./home-plugin/mimo-indicator/lib/client.js",
+    "./preset-plugin": "./preset/mimo-first/mimo-first-bridge.mjs",
+    "./runtime-settings": "./core/runtime-settings.mjs",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web"
+    },
+    "bundle": {
+      "patch": "./home-plugin/mimo-indicator/cordis.patch.yml"
+    }
+  },
+  "bin": {
+    "mimo-mcp-server": "mcp/mimo-mcp-server.mjs"
+  },
+  "files": [
+    "preset/",
+    "home-plugin/",
+    "dynamic/",
+    "mcp/",
+    "core/",
+    "scripts/",
+    "settings.example.json"
+  ],
+  "keywords": [
+    "dsh",
+    "cordis",
+    "mimo",
+    "mimocode",
+    "xiaomi",
+    "mcp",
+    "mcp-server",
+    "agent",
+    "deepseek-harness"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/new-256/mimo-first-bridge.git"
+  },
+  "homepage": "https://github.com/new-256/mimo-first-bridge#readme",
+  "bugs": {
+    "url": "https://github.com/new-256/mimo-first-bridge/issues"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "backend": "mimocode",
+  "desktopModel": "mimo-auto",
+  "_comment": "backend: mimocode = 本机 mimo CLI（MiMoCode）；mimo-desktop = Xiaomi MiMo 桌面客户端本地 API。也可用环境变量 MIMO_BRIDGE_BACKEND 或插件 config.backend 预选；工具参数 backend 可单次覆盖。"
+}

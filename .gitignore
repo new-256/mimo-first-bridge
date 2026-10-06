@@ -1,0 +1,4 @@
+# mimo CLI 在本仓库工作目录运行时生成的运行时状态（自忽略、不进制品）
+.mimocode/
+node_modules/
+*.tgz
