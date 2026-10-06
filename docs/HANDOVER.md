@@ -342,3 +342,15 @@ mimo --version         # 确认 CLI 在位
 ## 9. 给 DSH 维护方的一句话
 
 保持 **client 模块 id === 主包名**、**workflow 双行 disabled 守卫**、**开发态不跨会话存活** 这三条，就不会再踩姊妹仓踩过的坑；其余结构与 `agy-first-bridge` / `codebuddy-first-bridge` 同构，可对照维护。
+
+
+---
+
+## 0.2.0 升级兼容确认（2026-10-07 金标准验证）
+
+- **本插件版本**: 1.2.9
+- **目标运行时**: DSH 0.2.0-rc.2
+- **验证方式**: 隔离目录安装 0.2.0-rc.2 全套依赖，用 dsh-app-boot@0.2.0-rc.2 官方 valuatePluginCompatibility 逻辑对本插件实跑
+- **结论**: ✅ **PASS — 无需 version-exemption，DSH 更新后可正常加载启动**
+- **关键事实**: 0.2.0 环境 react 为 18（>=18.2.0 <19），与本插件前端 peer 一致；本插件无阻塞性 @deepseek-ai/dsh peer 冲突
+- 详见总台账：C:\Users\lcl\Desktop\DSH插件开发\插件版本管控与交接文档.md §6
