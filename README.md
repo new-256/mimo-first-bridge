@@ -1,3 +1,13 @@
+> **⚠️ 此包已统一 / This package is unified**
+>
+> 三个旧桥接包（agy / codebuddy / mimo）已合并为统一包 **[@luchenglong/cli-bridge](https://www.npmjs.com/package/@luchenglong/cli-bridge)**
+> （仓库 [new-256/cli-bridge](https://github.com/new-256/cli-bridge)）。旧包在 npm 上已标记 deprecated。
+>
+> 安装：`npm i @luchenglong/cli-bridge`　迁移对照：[docs/MIGRATION.md](https://github.com/new-256/cli-bridge/blob/main/docs/MIGRATION.md)
+> 本仓库已归档（只读），代码与历史保留。
+
+---
+
 # mimo-first-bridge
 
 > 一个用于 **DeepSeek Harness (DSH)** 的 Cordis 插件：把编码/构建/调试/排查等实际工作**优先派发给本机的 `mimo` CLI**（**Xiaomi MiMo Desktop / MiMoCode**），DSH 全程掌控 mimo（`--dangerously-skip-permissions`，mimo 全程无提示），并在 **mimo 流量受限 / 网络不通 / 认证失败** 时弹窗让用户选择是否回退到 **DSH 本地 API 配置**；同时在会话标题栏提供一个 **实时状态灯**，清晰显示 mimo 是否正在工作。
